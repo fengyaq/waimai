@@ -1,0 +1,22 @@
+<!--start.wxml-->
+<view class="container">
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="/images/more/loading.gif"></image>
+  </view>
+  <block wx:else>
+    <image class="title" src="/images/more/title8.png"></image>
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <image class="logo" src="/images/more/logo.png"></image>
+        <image class="wave" src="/images/more/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/images/more/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd" wx:if="{{islogin==true}}">
+        <view class="confirm-btn" bindtap='goToIndex'>
+          <text >走吧，订餐去</text>
+        </view>
+        </view>
+      <button  class="confirm-btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"  wx:if="{{islogin==false}}">授权登录</button>
+      </view>
+  </block>
+</view>
